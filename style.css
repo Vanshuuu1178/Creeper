@@ -1,0 +1,183 @@
+:root {
+    --bg: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --accent: #bb86fc;
+    --text: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    /* Prevents touching edges on mobile */
+    box-sizing: border-box;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+#typewriter {
+    margin: 20px 0;
+    min-height: 80px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Memory Cards */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0 30px 0;
+}
+
+.memory-card {
+    background: #252525;
+    border: 1px solid var(--accent);
+    height: 80px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-main {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    /* Full width on mobile */
+    max-width: 250px;
+}
+
+/* Certificate Style */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.certificate {
+    background: #fdf5e6;
+    color: #2c3e50;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    border: 8px double #d4af37;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+    box-sizing: border-box;
+}
+
+.certificate h1 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.certificate h2 {
+    font-style: italic;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 1.5rem;
+}
+
+.cert-quote {
+    margin-top: 25px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.stamp {
+    margin-top: 20px;
+    color: #c0392b;
+    font-weight: bold;
+    border: 4px solid #c0392b;
+    display: inline-block;
+    padding: 8px;
+    transform: rotate(-15deg);
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+.btn-close {
+    margin-top: 25px;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.heart {
+    position: absolute;
+    color: #ff4b2b;
+    animation: float 3s linear forwards;
+    z-index: 200;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+    .memory-grid {
+        grid-template-columns: 1fr;
+        /* Stacks the memory boxes vertically on phones */
+    }
+
+    .memory-card {
+        height: auto;
+        min-height: 60px;
+    }
+
+    .certificate h1 {
+        font-size: 1.5rem;
+    }
+
+    .certificate h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Best Friend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="status">Status: Friendship Reconnected 🟢</h2>
+
+        <div id="typewriter"></div>
+
+        <div class="memory-section">
+            <h3 style="color: var(--accent); margin-bottom: 15px;">Memories to Repeat ✨</h3>
+            <div class="memory-grid">
+                <div class="memory-card" onclick="revealMemory(this, 'The late night ccall talks.')">?</div>
+                <div class="memory-card" onclick="revealMemory(this, 'All the 3 AM Instagram reels.')">?</div>
+                <div class="memory-card" onclick="revealMemory(this, 'Finally sorting this out today.')">?</div>
+            </div>
+        </div>
+
+        <button class="btn-main" onclick="acceptPeace()">Sign Peace Treaty</button>
+    </div>
+
+    <div id="overlay">
+        <div class="certificate" id="cert-box">
+            <p>This Document Formally Recognizes</p>
+            <h1>A GREAT FRIENDSHIP</h1>
+            <p>is hereby restored between bhgy and</p>
+            <h2>CREEPER 🐘</h2>
+            <p class="cert-quote">
+                <i>"Mistakes were made, lessons were learned, <br> but the bond remains unbroken."</i>
+            </p>
+            <div class="stamp" id="stamp-id">OFFICIALLY SORTED ✅</div>
+            <button class="btn-close" onclick="closeCert()">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
